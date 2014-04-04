@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Example of Vertical Centering with display: table + display: table-cell</title>
+    <style>
+      html, body {
+        height: 100%;
+      }
+
+      /* Contianer Element */
+      h1 {
+        /* Setting Height here for arbitrary example usage */
+        height: 50%;
+
+        /* Horizontal Center with Margin 0 auto */
+        margin: 0 auto;
+
+        /* IMPORTANT: This is what will help make vertical-align actually work */
+        display: table;
+      }
+      /* Target Element */
+      h1 span.vertical-align {
+        /* Parent container acts like a table, this element acts like a table's cell, and vertical-align: middle actually works */
+        display: table-cell;
+        vertical-align: middle;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Container Element is H1 -->
+    <h1>
+      <!-- Target Element is Nested Span -->
+      <span class="vertical-align">I'm aligned vertically!</span>
+    </h1>
+  </body>
+</html>
